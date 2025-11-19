@@ -1,0 +1,23 @@
+{
+  "name": "typescript-mental-medal-session",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuel-niyonsaba/typeScript-mental-medal-session.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanuel-niyonsaba/typeScript-mental-medal-session/issues"
+  },
+  "homepage": "https://github.com/emmanuel-niyonsaba/typeScript-mental-medal-session#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

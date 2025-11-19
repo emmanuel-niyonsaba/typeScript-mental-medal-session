@@ -3,7 +3,34 @@
 // return a+b;
 // }
 // console.log(add(3.5,2.5))
-function introduceUser(user) {
-    return "Hello, my name is ".concat(user.name, ", I am ").concat(user.age, " years old, and my email is ").concat(user.email);
+// The second question 
+// type dataT = number|string;
+// const describeInput=(data:dataT)=>{
+// if( typeof data==='number'){
+//     return `The input type was Number ${data}`;
+// }else{
+//      return `The input type was String ${data}`;
+// }
+// }
+// console.log(describeInput("hdjfhd"))
+//the thrid question 
+// interface User {
+//     name:string;
+//     age:number;
+//     email:string
+// }
+// function introduceUser(user:User):string {
+//   return `Hello, my name is ${user.name}, I am ${user.age} years old, and my email is ${user.email}`;
+// }
+// console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));
+//fourth question 
+var Status;
+(function (Status) {
+    Status["Active"] = "active";
+    Status["Inactive"] = "Inactive";
+    Status["Pending"] = "Pending";
+})(Status || (Status = {}));
+function getStatusMessage(data) {
+    return "The item is currently ".concat(data);
 }
-console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));
+console.log(getStatusMessage(Status.Pending));

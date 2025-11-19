@@ -62,17 +62,31 @@
 //6 question 
 
 
-interface Employee {
-    name: string;
-    employeeId:number;
+// interface Employee {
+//     name: string;
+//     employeeId:number;
 
-}
-interface Manager{
-        teamSize:number
-}
-type ManagerEmployee=Employee & Manager
+// }
+// interface Manager{
+//         teamSize:number
+// }
+// type ManagerEmployee=Employee & Manager
 
-function describeManagerEmployee(me: ManagerEmployee ) {
-  return `${me.name} (ID: ${me.employeeId}) manages a team of ${me.teamSize} people`;
+// function describeManagerEmployee(me: ManagerEmployee ):string {
+//   return `${me.name} (ID: ${me.employeeId}) manages a team of ${me.teamSize} people`;
+// }
+// console.log(describeManagerEmployee({ name: "Bob", employeeId: 123, teamSize: 5 }))
+
+
+
+
+// 7 question 
+
+type func =(a:number,b:number)=>number;
+const add:func = (x, y) => x + y;
+const multiply:func = (x, y) => x * y;
+
+function applyOperation(a:number, b:number, operation:func):number {
+return  operation(a,b);
 }
-console.log(describeManagerEmployee({ name: "Bob", employeeId: 123, teamSize: 5 }))
+console.log(applyOperation(15,10,add))

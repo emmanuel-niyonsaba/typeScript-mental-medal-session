@@ -3,7 +3,9 @@
 // return a+b;
 // }
 // console.log(add(3.5,2.5))
-function describeManagerEmployee(me) {
-    return "".concat(me.name, " (ID: ").concat(me.employeeId, ") manages a team of ").concat(me.teamSize, " people");
+var add = function (x, y) { return x + y; };
+var multiply = function (x, y) { return x * y; };
+function applyOperation(a, b, operation) {
+    return operation(a, b);
 }
-console.log(describeManagerEmployee({ name: "Bob", employeeId: 123, teamSize: 5 }));
+console.log(applyOperation(15, 10, add));

@@ -90,3 +90,6 @@ function applyOperation(a:number, b:number, operation:func):number {
 return  operation(a,b);
 }
 console.log(applyOperation(15,10,add))
+
+
+//done with dto day exercises;

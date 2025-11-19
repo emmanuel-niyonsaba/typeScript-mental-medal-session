@@ -24,13 +24,18 @@
 // }
 // console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));
 //fourth question 
-var Status;
-(function (Status) {
-    Status["Active"] = "active";
-    Status["Inactive"] = "Inactive";
-    Status["Pending"] = "Pending";
-})(Status || (Status = {}));
-function getStatusMessage(data) {
-    return "The item is currently ".concat(data);
-}
-console.log(getStatusMessage(Status.Pending));
+// enum Status{
+//     Active=" The item is currently active",
+//     Inactive =" The item is currently Inactive",
+//     Pending ="The item is Pending review"
+// }
+// function getStatusMessage(data:Status):string {
+//   return data
+// }
+// console.log(getStatusMessage(Status.Pending))
+var getFirstElement = function (data) {
+    return data[0];
+};
+console.log(getFirstElement([1, 2, 3]));
+console.log(getFirstElement(["a", "b", "c"]));
+console.log(getFirstElement([{ id: 1 }, { id: 2 }]));

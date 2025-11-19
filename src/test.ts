@@ -36,14 +36,23 @@
 //fourth question 
 
 
-enum Status{
-    Active="active",
-    Inactive ="Inactive",
-    Pending ="Pending"
-}
-function getStatusMessage(data:Status):string {
-  return `The item is currently ${data}`
-}
+// enum Status{
+//     Active=" The item is currently active",
+//     Inactive =" The item is currently Inactive",
+//     Pending ="The item is Pending review"
+// }
+// function getStatusMessage(data:Status):string {
+//   return data
+// }
 
 
-console.log(getStatusMessage(Status.Pending))
+// console.log(getStatusMessage(Status.Pending))
+
+
+
+const getFirstElement=<T>(data:T[]):T|undefined=>{
+    return data[0];
+}
+console.log( getFirstElement<number>([1, 2, 3]));
+console.log(getFirstElement(["a", "b", "c"]))
+console.log(getFirstElement([{ id: 1 }, { id: 2 }]))

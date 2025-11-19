@@ -7,13 +7,27 @@
 
 
 // The second question 
-type dataT = number|string;
+// type dataT = number|string;
 
-const describeInput=(data:dataT)=>{
-if( typeof data==='number'){
-    return `The input type was Number ${data}`;
-}else{
-     return `The input type was String ${data}`;
+// const describeInput=(data:dataT)=>{
+// if( typeof data==='number'){
+//     return `The input type was Number ${data}`;
+// }else{
+//      return `The input type was String ${data}`;
+// }
+// }
+// console.log(describeInput("hdjfhd"))
+
+
+
+//the thrid question 
+
+interface User {
+    name:string;
+    age:number;
+    email:string
 }
+function introduceUser(user:User) {
+  return `Hello, my name is ${user.name}, I am ${user.age} years old, and my email is ${user.email}`;
 }
-console.log(describeInput("hdjfhd"))
+console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));

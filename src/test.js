@@ -3,12 +3,7 @@
 // return a+b;
 // }
 // console.log(add(3.5,2.5))
-var describeInput = function (data) {
-    if (typeof data === 'number') {
-        return "The input type was Number";
-    }
-    else {
-        return "The input type was String";
-    }
-};
-console.log(describeInput("hello"));
+function introduceUser(user) {
+    return "Hello, my name is ".concat(user.name, ", I am ").concat(user.age, " years old, and my email is ").concat(user.email);
+}
+console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));

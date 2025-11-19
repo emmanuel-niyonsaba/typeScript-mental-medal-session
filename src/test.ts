@@ -49,10 +49,30 @@
 // console.log(getStatusMessage(Status.Pending))
 
 
+/// five question
 
-const getFirstElement=<T>(data:T[]):T|undefined=>{
-    return data[0];
+
+// const getFirstElement=<T>(data:T[]):T|undefined=>{
+//     return data[0];
+// }
+// console.log( getFirstElement<number>([1, 2, 3]));
+// console.log(getFirstElement(["a", "b", "c"]))
+// console.log(getFirstElement([{ id: 1 }, { id: 2 }]))
+
+//6 question 
+
+
+interface Employee {
+    name: string;
+    employeeId:number;
+
 }
-console.log( getFirstElement<number>([1, 2, 3]));
-console.log(getFirstElement(["a", "b", "c"]))
-console.log(getFirstElement([{ id: 1 }, { id: 2 }]))
+interface Manager{
+        teamSize:number
+}
+type ManagerEmployee=Employee & Manager
+
+function describeManagerEmployee(me: ManagerEmployee ) {
+  return `${me.name} (ID: ${me.employeeId}) manages a team of ${me.teamSize} people`;
+}
+console.log(describeManagerEmployee({ name: "Bob", employeeId: 123, teamSize: 5 }))

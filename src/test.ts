@@ -119,12 +119,34 @@ console.log(applyOperation(15,10,add))
 
 //question 9 Readonly propeteties 
 
-interface Config{
-    readonly apiUrl:string;
-    readonly timeout:Number;
+// interface Config{
+//     readonly apiUrl:string;
+//     readonly timeout:Number;
+// }
+// const config: Config = {
+//   apiUrl: "https://api.example.com",
+//   timeout: 5000
+// };
+//  config.apiUrl = "https://api.newsite.com"; 
+
+
+
+///qeustion 10
+
+
+type Direction= "north"|"south"|"east"|"west";
+function move(direction:Direction) {
+  switch(direction) {
+    case "north":
+      return { x: 0, y: 1 };
+    case "south":
+      return { x: 0, y: -1 };
+    case "east":
+      return { x: 1, y: 0 };
+    case "west":
+      return { x: -1, y: 0 };
+  }
 }
-const config: Config = {
-  apiUrl: "https://api.example.com",
-  timeout: 5000
-};
- config.apiUrl = "https://api.newsite.com"; 
+
+console.log(move("west"));
+console.log(move("north"))

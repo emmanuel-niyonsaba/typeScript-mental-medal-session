@@ -9,17 +9,17 @@ function applyOperation(a, b, operation) {
     return operation(a, b);
 }
 console.log(applyOperation(15, 10, add));
-function processValue(value) {
-    if (typeof value === 'string') {
-        return "The String value is ".concat(value.toUpperCase());
-    }
-    else if (typeof value === "number") {
-        return "The vaule number is: ".concat(value * value);
-    }
-    else {
-        return "The value boolean is : ".concat(!value);
+function move(direction) {
+    switch (direction) {
+        case "north":
+            return { x: 0, y: 1 };
+        case "south":
+            return { x: 0, y: -1 };
+        case "east":
+            return { x: 1, y: 0 };
+        case "west":
+            return { x: -1, y: 0 };
     }
 }
-console.log(processValue("hello"));
-console.log(processValue(5));
-console.log(processValue(true));
+console.log(move("west"));
+console.log(move("north"));

@@ -131,22 +131,48 @@ console.log(applyOperation(15,10,add))
 
 
 
-///qeustion 10
+///qeustion 10   Literal types
 
 
-type Direction= "north"|"south"|"east"|"west";
-function move(direction:Direction) {
-  switch(direction) {
-    case "north":
-      return { x: 0, y: 1 };
-    case "south":
-      return { x: 0, y: -1 };
-    case "east":
-      return { x: 1, y: 0 };
-    case "west":
-      return { x: -1, y: 0 };
-  }
-}
+// type Direction= "north"|"south"|"east"|"west";
+// function move(direction:Direction) {
+//   switch(direction) {
+//     case "north":
+//       return { x: 0, y: 1 };
+//     case "south":
+//       return { x: 0, y: -1 };
+//     case "east":
+//       return { x: 1, y: 0 };
+//     case "west":
+//       return { x: -1, y: 0 };
+//   }
+// }
 
-console.log(move("west"));
-console.log(move("north"))
+// console.log(move("west"));
+// console.log(move("north"))
+
+
+
+///quesition 11
+ class BankAccount{
+    #Balance:number;
+    constructor(balance:number){
+        this.#Balance=balance;
+    }
+    deposit(amount:number):number{
+    return this.#Balance+amount;
+    }
+    withdraw(amount:number):number|boolean{
+        if(amount>this.#Balance){
+            return false;
+        }else{
+            return this.#Balance-amount;
+        }
+    }
+ }
+const newBlance = new BankAccount(1000)
+console.log(newBlance.deposit(500))
+console.log(newBlance.withdraw(200))
+console.log(newBlance.withdraw(2000))
+
+

@@ -95,21 +95,36 @@ console.log(applyOperation(15,10,add))
 //done with dto day exercises;
 
 
-//quesiton 8 
+//quesiton 8 about type guard 
 
 
-type dataFormat = String|number|boolean;
+// type dataFormat = String|number|boolean;
 
-function processValue(value:dataFormat):string {
- if( typeof value ==='string'){
-return `The String value is ${value.toUpperCase()}`
- }else if( typeof value ==="number"){
-    return `The vaule number is: ${value*value}`
- }else{
-    return `The value boolean is : ${!value }`
- }
+// function processValue(value:dataFormat):string {
+//  if( typeof value ==='string'){
+// return `The String value is ${value.toUpperCase()}`
+//  }else if( typeof value ==="number"){
+//     return `The vaule number is: ${value*value}`
+//  }else{
+//     return `The value boolean is : ${!value }`
+//  }
+// }
+
+// console.log(processValue("hello"))
+// console.log(processValue(5))
+// console.log(processValue(true))
+
+
+
+
+//question 9 Readonly propeteties 
+
+interface Config{
+    readonly apiUrl:string;
+    readonly timeout:Number;
 }
-
-console.log(processValue("hello"))
-console.log(processValue(5))
-console.log(processValue(true))
+const config: Config = {
+  apiUrl: "https://api.example.com",
+  timeout: 5000
+};
+ config.apiUrl = "https://api.newsite.com"; 

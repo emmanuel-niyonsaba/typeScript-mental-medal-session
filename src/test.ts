@@ -93,3 +93,23 @@ console.log(applyOperation(15,10,add))
 
 
 //done with dto day exercises;
+
+
+//quesiton 8 
+
+
+type dataFormat = String|number|boolean;
+
+function processValue(value:dataFormat):string {
+ if( typeof value ==='string'){
+return `The String value is ${value.toUpperCase()}`
+ }else if( typeof value ==="number"){
+    return `The vaule number is: ${value*value}`
+ }else{
+    return `The value boolean is : ${!value }`
+ }
+}
+
+console.log(processValue("hello"))
+console.log(processValue(5))
+console.log(processValue(true))

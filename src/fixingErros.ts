@@ -105,7 +105,7 @@ const street = getNestedValue(person, "address.street");
 
 /// After fixing
 
-
+/*
 function mergeObjects<T,U>(obj1:T, obj2:U):T&U {
   return { ...obj1, ...obj2 };
 }
@@ -132,3 +132,60 @@ const merged = mergeObjects(person, updates);
 console.log(merged)
 const street = getNestedValue(person, "address.street");
 console.log(street)
+*/
+
+
+// question 4 form gate questions
+
+
+
+// Before 
+
+/*
+const processRecipe = (recipe: number) => {
+  console.log(recipe.ingredients);
+};
+
+processRecipe({
+  title: 'Chocolate Chip Cookies',
+  ingredients: [
+    { name: 'Flour', quantity: 4 },
+    { name: 'Sugar', quantity: '1 cup', price: 5 },
+  ],
+  instructions: '...',
+});
+
+
+*/
+
+
+//After fixing it
+
+type  Ingingredients={
+   name:string;
+   quantity:string|number;
+   price?:number; 
+  }
+
+type Recipe = {
+  title:string;
+  ingredients:Ingingredients[];
+  instructions:string;
+  };
+
+
+
+
+
+const processRecipe = (recipe:Recipe) => {
+  console.log(recipe.ingredients);
+};
+
+processRecipe({
+  title: 'Chocolate Chip Cookies',
+  ingredients: [
+    { name: 'Flour', quantity: 4 },
+    { name: 'Sugar', quantity: '1 cup', price: 5 },
+  ],
+  instructions: '...',
+});

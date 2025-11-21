@@ -36,6 +36,8 @@ const discounted = applyDiscount(total, 0.1);
 
 
 //After fixing erros
+
+/*
 function calculateTotal(items:{
     name:string;
     price:number
@@ -62,3 +64,70 @@ const total = calculateTotal(products);
 console.log(total);
 const discounted = applyDiscount(parseInt(total), 0.1);
 console.log(discounted);
+
+
+*/
+
+
+/// question 18 finxing object errors
+
+//Before
+
+
+/*
+function mergeObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+}
+
+function getNestedValue(obj, path) {
+  const keys = path.split('.');
+  let value = obj;
+  for (let key of keys) {
+    value = value[key];
+  }
+  return value;
+}
+
+const person = {
+  name: "John",
+  address: {
+    street: "123 Main St",
+    city: "New York"
+  }
+};
+
+const updates = { age: 30, city: "Boston" };
+const merged = mergeObjects(person, updates);
+const street = getNestedValue(person, "address.street");
+*/
+
+
+
+/// After fixing
+
+function mergeObjects<T,U>(obj1:T, obj2:U):T&U {
+  return { ...obj1, ...obj2 };
+}
+
+function getNestedValue<T>(obj:T, path:string):T {
+  const keys = path.split('.');
+  let value:any = obj;
+  for (let key of keys) {
+    value= value[key];
+  }
+  return value;
+}
+
+const person = {
+  name: "John",
+  address: {
+    street: "123 Main St",
+    city: "New York"
+  }
+};
+
+const updates = { age: 30, city: "Boston" };
+const merged = mergeObjects(person, updates);
+console.log(merged)
+const street = getNestedValue(person, "address.street");
+console.log(street);

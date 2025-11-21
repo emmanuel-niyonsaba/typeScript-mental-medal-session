@@ -284,4 +284,30 @@
 
 
 
-// qestion 16 
+// qestion 19  Custom Type Predicates
+
+// 1. Define the Book interface
+interface Book {
+  title: string;
+  isbn: string;
+}
+
+// 2. Type predicate function
+function isBook(item: any): item is Book {
+  return (
+    typeof item === "object" && item !== null && "title" in item &&"isbn" in item && typeof item.title === "string" &&typeof item.isbn === "string"  );
+}
+
+// 3. Mixed array
+const items: (Book | string)[] = [
+  { title: "1984", isbn: "978-0451524935" },
+  "Not a book",
+  "fhdkfhdkfjfhdff",
+  { title: "Brave New World", isbn: "978-0060085261" }
+];
+
+// 4. Filter only Book objects
+const books = items.filter(isBook);
+
+console.log(books);
+

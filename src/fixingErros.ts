@@ -105,6 +105,7 @@ const street = getNestedValue(person, "address.street");
 
 /// After fixing
 
+
 function mergeObjects<T,U>(obj1:T, obj2:U):T&U {
   return { ...obj1, ...obj2 };
 }
@@ -130,4 +131,4 @@ const updates = { age: 30, city: "Boston" };
 const merged = mergeObjects(person, updates);
 console.log(merged)
 const street = getNestedValue(person, "address.street");
-console.log(street);
+console.log(street)

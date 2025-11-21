@@ -161,6 +161,7 @@ processRecipe({
 
 //After fixing it
 
+/*
 type  Ingingredients={
    name:string;
    quantity:string|number;
@@ -172,6 +173,30 @@ type Recipe = {
   ingredients:Ingingredients[];
   instructions:string;
   };
+  */
+
+
+
+  //question 7 for gate qestions
+
+
+  // Before 
+
+/*
+
+
+  interface Car {
+    brand: string;
+    model?: string;
+    price?: number;
+}
+
+function printCarModel(car: Car) {
+    console.log(car.model.toUpperCase());
+    console.log(car.price.toFixed(2));
+}
+
+printCarModel({ brand: "Toyota" , price: '3000'});
 
 
 
@@ -189,3 +214,25 @@ processRecipe({
   ],
   instructions: '...',
 });
+
+
+*/
+
+
+//After fixing it 
+
+
+
+interface Car {
+    brand: string;
+    model: string;
+    price: number;
+}
+
+function printCarModel(car: Car) {
+  console.log(car.brand);
+    console.log(car.model.toUpperCase());
+    console.log(car.price.toFixed(2));
+}
+
+printCarModel({ brand: "Toyota" ,model:"Honda", price: 3000});

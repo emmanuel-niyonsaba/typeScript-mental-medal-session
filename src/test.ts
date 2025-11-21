@@ -237,11 +237,51 @@
 
 //question 14 about tuple
 
-type UserTuple =[name: string, age: number, active: boolean] ;
+// type UserTuple =[name: string, age: number, active: boolean] ;
 
-function formatUserTuple(user:UserTuple) {
-  const [name, age, active] = user;
-  return `${name} is ${age} years old and is ${active ? "active" : "inactive"}`;
-}
-console.log(formatUserTuple( ["Bob", 35, false]))
-console.log(formatUserTuple(["Alice", 28, true]))
+// function formatUserTuple(user:UserTuple) {
+//   const [name, age, active] = user;
+//   return `${name} is ${age} years old and is ${active ? "active" : "inactive"}`;
+// }
+// console.log(formatUserTuple( ["Bob", 35, false]))
+// console.log(formatUserTuple(["Alice", 28, true]))
+
+
+//question 15 async and await with type annotation 
+
+// interface UserData {
+//   id: number;
+//   name: string;
+//   email: string;
+// }
+
+// async function fetchUser(userId: number):Promise<UserData> {
+//   return new Promise((Res)=>{
+//     setTimeout(()=>{
+
+//         Res({
+//             id:userId,
+//             name:"Emmy",
+//             email:"emmmy@gamil.com"
+//         })
+//     },1000)
+//   })
+// }
+
+// async function displayUser(userId: number): Promise<string> {
+//   const user = await fetchUser(userId);
+//   return `User: ${user.name}, Email: ${user.email}`;
+// }
+
+
+//  async function final(){
+    
+
+// const finalResult = await (fetchUser(1))
+// return finalResult
+// }
+// console.log(final())
+
+
+
+

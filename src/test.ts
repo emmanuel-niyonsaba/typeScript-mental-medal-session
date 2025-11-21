@@ -286,6 +286,8 @@
 
 // qestion 19  Custom Type Predicates
 
+
+/*
 // 1. Define the Book interface
 interface Book {
   title: string;
@@ -310,4 +312,36 @@ const items: (Book | string)[] = [
 const books = items.filter(isBook);
 
 console.log(books);
+*/
 
+
+
+
+//question 20  Conditional Types
+
+/*
+// Conditional type Flatten
+type Flatten<T> = T extends (infer U)[] ? U : T;
+
+
+type A = Flatten<string[]>; 
+type B = Flatten<number>;    
+type C = Flatten<boolean[]>;  
+type D = Flatten<{ name: string }>; 
+
+*/
+
+
+//question 21  Omit and pick utilities
+
+interface User{
+  id:number
+   name:string
+  email:string
+   password:number
+    createdAt:string
+}
+
+type PublicUser = Omit<User,"password">;
+type UserPreview = Pick<User,"id"|"name"|"email">
+  

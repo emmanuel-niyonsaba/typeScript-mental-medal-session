@@ -211,24 +211,37 @@
 
 // console.log(getColorCode(Color.Green))
 
-//question 13;
+//question 13 keyof and extends usage;
 
-interface User {
-  name: string;
-  age: number;
-  email: string;
+// interface User {
+//   name: string;
+//   age: number;
+//   email: string;
+// }
+
+
+// function getProperty<T,K extends keyof T>(obj:T, key:K):T[K] {
+//   return obj[key];
+// }
+// const user: User = {
+//   name: "Ted",
+//   age: 17,
+//   email: "ted@example.com"
+// };
+
+// console.log(getProperty(user, "name"));  
+// console.log(getProperty(user, "age"));    
+// console.log(getProperty(user, "email")); 
+
+
+
+//question 14 about tuple
+
+type UserTuple =[name: string, age: number, active: boolean] ;
+
+function formatUserTuple(user:UserTuple) {
+  const [name, age, active] = user;
+  return `${name} is ${age} years old and is ${active ? "active" : "inactive"}`;
 }
-
-
-function getProperty<T,K extends keyof T>(obj:T, key:K):T[K] {
-  return obj[key];
-}
-const user: User = {
-  name: "Ted",
-  age: 17,
-  email: "ted@example.com"
-};
-
-console.log(getProperty(user, "name"));  
-console.log(getProperty(user, "age"));    
-console.log(getProperty(user, "email")); 
+console.log(formatUserTuple( ["Bob", 35, false]))
+console.log(formatUserTuple(["Alice", 28, true]))

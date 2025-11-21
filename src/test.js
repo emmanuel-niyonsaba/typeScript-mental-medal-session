@@ -3,14 +3,9 @@
 // return a+b;
 // }
 // console.log(add(3.5,2.5))
-function getProperty(obj, key) {
-    return obj[key];
+function formatUserTuple(user) {
+    var name = user[0], age = user[1], active = user[2];
+    return "".concat(name, " is ").concat(age, " years old and is ").concat(active ? "active" : "inactive");
 }
-var user = {
-    name: "Ted",
-    age: 17,
-    email: "ted@example.com"
-};
-console.log(getProperty(user, "name"));
-console.log(getProperty(user, "age"));
-console.log(getProperty(user, "email"));
+console.log(formatUserTuple(["Bob", 35, false]));
+console.log(formatUserTuple(["Alice", 28, true]));

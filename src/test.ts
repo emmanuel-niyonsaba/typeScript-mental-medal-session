@@ -82,14 +82,14 @@
 
 // 7 question 
 
-type func =(a:number,b:number)=>number;
-const add:func = (x, y) => x + y;
-const multiply:func = (x, y) => x * y;
+// type func =(a:number,b:number)=>number;
+// const add:func = (x, y) => x + y;
+// const multiply:func = (x, y) => x * y;
 
-function applyOperation(a:number, b:number, operation:func):number {
-return  operation(a,b);
-}
-console.log(applyOperation(15,10,add))
+// function applyOperation(a:number, b:number, operation:func):number {
+// return  operation(a,b);
+// }
+// console.log(applyOperation(15,10,add))
 
 
 //done with dto day exercises;
@@ -154,25 +154,37 @@ console.log(applyOperation(15,10,add))
 
 
 ///quesition 11
- class BankAccount{
-    #Balance:number;
-    constructor(balance:number){
-        this.#Balance=balance;
+class BankAccount {
+    private balance: number;
+
+    constructor(balance: number) {
+        this.balance = balance;
     }
-    deposit(amount:number):number{
-    return this.#Balance+amount;
+
+    deposit(amount: number): void {
+        this.balance += amount;
     }
-    withdraw(amount:number):number|boolean{
-        if(amount>this.#Balance){
+
+    withdraw(amount: number): boolean {
+        if (amount > this.balance) {
             return false;
-        }else{
-            return this.#Balance-amount;
         }
+        this.balance -= amount;
+        return true;
     }
- }
-const newBlance = new BankAccount(1000)
-console.log(newBlance.deposit(500))
-console.log(newBlance.withdraw(200))
-console.log(newBlance.withdraw(2000))
 
+    getBalance(): number {
+        return this.balance;
+    }
+}
 
+const account = new BankAccount(1000);
+
+account.deposit(500);
+console.log(account.getBalance());       // 1500
+
+console.log(account.withdraw(200));      // true
+console.log(account.getBalance());       // 1300
+
+console.log(account.withdraw(2000));     // false
+console.log(account.getBalance());       // 1300

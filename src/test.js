@@ -3,24 +3,64 @@
 // return a+b;
 // }
 // console.log(add(3.5,2.5))
-var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _BankAccount_Balance;
-var add = function (x, y) { return x + y; };
-var multiply = function (x, y) { return x * y; };
-function applyOperation(a, b, operation) {
-    return operation(a, b);
-}
-console.log(applyOperation(15, 10, add));
+// The second question 
+// type dataT = number|string;
+// const describeInput=(data:dataT)=>{
+// if( typeof data==='number'){
+//     return `The input type was Number ${data}`;
+// }else{
+//      return `The input type was String ${data}`;
+// }
+// }
+// console.log(describeInput("hdjfhd"))
+//the thrid question 
+// interface User {
+//     name:string;
+//     age:number;
+//     email:string
+// }
+// function introduceUser(user:User):string {
+//   return `Hello, my name is ${user.name}, I am ${user.age} years old, and my email is ${user.email}`;
+// }
+// console.log(introduceUser({ name: "Alice", age: 28, email: "alice@example.com" }));
+//fourth question 
+// enum Status{
+//     Active=" The item is currently active",
+//     Inactive =" The item is currently Inactive",
+//     Pending ="The item is Pending review"
+// }
+// function getStatusMessage(data:Status):string {
+//   return data
+// }
+// console.log(getStatusMessage(Status.Pending))
+/// five question
+// const getFirstElement=<T>(data:T[]):T|undefined=>{
+//     return data[0];
+// }
+// console.log( getFirstElement<number>([1, 2, 3]));
+// console.log(getFirstElement(["a", "b", "c"]))
+// console.log(getFirstElement([{ id: 1 }, { id: 2 }]))
+//6 question 
+// interface Employee {
+//     name: string;
+//     employeeId:number;
+// }
+// interface Manager{
+//         teamSize:number
+// }
+// type ManagerEmployee=Employee & Manager
+// function describeManagerEmployee(me: ManagerEmployee ):string {
+//   return `${me.name} (ID: ${me.employeeId}) manages a team of ${me.teamSize} people`;
+// }
+// console.log(describeManagerEmployee({ name: "Bob", employeeId: 123, teamSize: 5 }))
+// 7 question 
+// type func =(a:number,b:number)=>number;
+// const add:func = (x, y) => x + y;
+// const multiply:func = (x, y) => x * y;
+// function applyOperation(a:number, b:number, operation:func):number {
+// return  operation(a,b);
+// }
+// console.log(applyOperation(15,10,add))
 //done with dto day exercises;
 //quesiton 8 about type guard 
 // type dataFormat = String|number|boolean;
@@ -65,24 +105,27 @@ console.log(applyOperation(15, 10, add));
 ///quesition 11
 var BankAccount = /** @class */ (function () {
     function BankAccount(balance) {
-        _BankAccount_Balance.set(this, void 0);
-        __classPrivateFieldSet(this, _BankAccount_Balance, balance, "f");
+        this.balance = balance;
     }
     BankAccount.prototype.deposit = function (amount) {
-        return __classPrivateFieldGet(this, _BankAccount_Balance, "f") + amount;
+        this.balance += amount;
     };
     BankAccount.prototype.withdraw = function (amount) {
-        if (amount > __classPrivateFieldGet(this, _BankAccount_Balance, "f")) {
+        if (amount > this.balance) {
             return false;
         }
-        else {
-            return __classPrivateFieldGet(this, _BankAccount_Balance, "f") - amount;
-        }
+        this.balance -= amount;
+        return true;
+    };
+    BankAccount.prototype.getBalance = function () {
+        return this.balance;
     };
     return BankAccount;
 }());
-_BankAccount_Balance = new WeakMap();
-var newBlance = new BankAccount(1000);
-console.log(newBlance.deposit(500));
-console.log(newBlance.withdraw(200));
-console.log(newBlance.withdraw(2000));
+var account = new BankAccount(1000);
+account.deposit(500);
+console.log(account.getBalance()); // 1500
+console.log(account.withdraw(200)); // true
+console.log(account.getBalance()); // 1300
+console.log(account.withdraw(2000)); // false
+console.log(account.getBalance()); // 1300

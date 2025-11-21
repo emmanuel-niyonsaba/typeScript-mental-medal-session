@@ -102,30 +102,46 @@
 // }
 // console.log(move("west"));
 // console.log(move("north"))
-///quesition 11
-var BankAccount = /** @class */ (function () {
-    function BankAccount(balance) {
-        this.balance = balance;
+///quesition 11 class with type annotation 
+// class BankAccount {
+//     private balance: number;
+//     constructor(balance: number) {
+//         this.balance = balance;
+//     }
+//     deposit(amount: number): void {
+//         this.balance += amount;
+//     }
+//     withdraw(amount: number): boolean {
+//         if (amount > this.balance) {
+//             return false;
+//         }
+//         this.balance -= amount;
+//         return true;
+//     }
+//     getBalance(): number {
+//         return this.balance;
+//     }
+// }
+// const account = new BankAccount(1000);
+// account.deposit(500);
+// console.log(account.getBalance());       // 1500
+// console.log(account.withdraw(200));      // true
+// console.log(account.getBalance());       // 1300
+// console.log(account.withdraw(2000));     // false
+// console.log(account.getBalance());       // 1300
+//question 12 using the never type
+var Color;
+(function (Color) {
+    Color["Red"] = "RED";
+    Color["Green"] = "GREEN";
+    Color["Blue"] = "BLUE";
+})(Color || (Color = {}));
+function getColorCode(color) {
+    if (Object.values(Color).includes(color)) {
+        return "done";
     }
-    BankAccount.prototype.deposit = function (amount) {
-        this.balance += amount;
-    };
-    BankAccount.prototype.withdraw = function (amount) {
-        if (amount > this.balance) {
-            return false;
-        }
-        this.balance -= amount;
-        return true;
-    };
-    BankAccount.prototype.getBalance = function () {
-        return this.balance;
-    };
-    return BankAccount;
-}());
-var account = new BankAccount(1000);
-account.deposit(500);
-console.log(account.getBalance()); // 1500
-console.log(account.withdraw(200)); // true
-console.log(account.getBalance()); // 1300
-console.log(account.withdraw(2000)); // false
-console.log(account.getBalance()); // 1300
+    else {
+        throw console.error("Not done");
+    }
+}
+console.log(getColorCode(Color.Green));

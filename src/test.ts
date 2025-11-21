@@ -211,3 +211,24 @@
 
 // console.log(getColorCode(Color.Green))
 
+//question 13;
+
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+
+function getProperty<T,K extends keyof T>(obj:T, key:K):T[K] {
+  return obj[key];
+}
+const user: User = {
+  name: "Ted",
+  age: 17,
+  email: "ted@example.com"
+};
+
+console.log(getProperty(user, "name"));  
+console.log(getProperty(user, "age"));    
+console.log(getProperty(user, "email")); 
